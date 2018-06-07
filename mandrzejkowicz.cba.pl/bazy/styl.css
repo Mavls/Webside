@@ -1,0 +1,4 @@
+/* Ukrycie reklam CBA */
+div[style="text-align:center;font-size:11px;font-family:arial;background-color:black;color:white"], [id^="bmone2n-"], .cbalink {
+  display: none;
+}

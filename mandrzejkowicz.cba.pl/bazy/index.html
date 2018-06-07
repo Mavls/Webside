@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<script type="text/javascript" charset="utf8" src="Strona.js"> </script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="Description" content= "Pokaz mody" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Pokaz mody </title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="styl.css">
+</head>
+
+<body>
+
+
+<div class="page-header">
+  <center><h1>Pokaz mody</h1></center>
+</div>
+
+
+<div class="row">
+
+  
+<div class="col-md-3"><h2>Menu</h2>
+<center>
+<div id="mySidenav" class="sidenav">
+<a href="." class="btn btn-primary btn-lg btn-block">Dodawanie</a>
+<a href="Ewidencja-domow-mody.php" class="btn btn-success btn-lg btn-block">Ewidencja domów mody</a>
+<a class="btn btn-danger btn-lg btn-block">Ewidencja modelek</a>
+<a class="btn btn-info btn-lg btn-block">Ewidencja Projektantów</a>
+<a class="btn btn-warning btn-lg btn-block">Rejestr pokazów</a>
+</div>
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+
+</center>
+</div>
+
+
+<div class="col-md-8"><h2>Ewidencja domow mody</h2>
+<form action="baza-akcje.php" method="post" name="form">
+  <input type="hidden" name="tabela" value="ewidencja domów mody"/> <!-- Ukryty input, żeby przesłać nazwę tabeli -->
+  <input type="hidden" name="akcja" value="dodaj"/> <!-- Ukryty input, żeby przesłać rodzaj pożądanej akcji -->
+  <div class="form-group">
+    <label for="name">Adres</label>
+    <input type="text" class="form-control" id="name" name="Adres" placeholder="Adres" onblur="adres_validation()">
+	<div id="name_error"></div>
+  </div>
+  <div class="form-group">
+   <label for="projektant">Projektant</label>
+    <input type="text" class="form-control" id="projektant" name="Projektant" placeholder="Projektant" onblur="projektant_validation()">
+	<div id="projektant_error"></div>
+  </div>
+  <div class="form-group">
+   <label for="Prestiz">Prestiz</label>
+    <input type="text" class="form-control" id="Prestiz" name="Prestiz" placeholder="Prestiz" onblur="Prestiz_validation()">
+	<div id="Prestiz_error"></div>
+  </div>
+  <input type="submit"/>
+  
+  
+</form>
+</div>
+
+<div class="col-md-3"><h2></h2>
+</div>
+<div class="col-md-8"><h2>Ewidencja modelek</h2>
+<form name="formm">
+  <div class="form-group">
+    <label for="mname">Imie</label>
+    <input type="text" class="form-control" id="mname" name="mname" placeholder="Imie" onblur="mname_validation()">
+	<div id="mname_error"></div>
+  </div>
+  <div class="form-group">
+   <label for="modelka_nazwisko">Nazwisko</label>
+    <input type="text" class="form-control" id="modelka_nazwisko" name="modelka_nazwisko" placeholder="Nazwisko" onblur="mfname_validation()">
+	<div id="fname_error"></div>
+  </div>
+  <div class="form-group">
+   <label for="modelka_wiek">Wiek</label>
+    <input type="text" class="form-control" id="modelka_wiek" name="modelka_wiek" placeholder="Wiek" onblur="wiek_validation()">
+		<div id="modelka_wiek_error"></div>
+  </div>
+  
+  <div class="form-group">
+   <label for="modelka_email">Email</label>
+    <input type="text" class="form-control" id="modelka_email" name="modelka_email" placeholder="Email" onblur="email_validation()">
+			<div id="email_error"></div>
+  </div>
+  
+  <div class="form-group">
+   <label for="modelka_ocena">Ocena</label>
+    <input type="text" class="form-control" id="modelka_ocena" name="modelka_ocena" placeholder="Ocena" onblur="ocena_validation()">
+			<div id="modelka_ocena_error"></div>
+  </div>
+  
+
+    <div class="form-group"> Plec:
+<label class="radio-inline"><input type="radio" name="optradio">Kobieta</label>
+<label class="radio-inline"><input type="radio" name="optradio">Mezczyzna</label>
+  </div>
+  
+</div>
+</form>
+<div class="col-md-3"><h2></h2>
+</div>
+<div class="col-md-8"><h2>Ewidencja Projektantow</h2>
+<form name="formmm">
+  <div class="form-group">
+    <label for="projektant_name">Imie</label>
+    <input type="text" class="form-control" id="projektant_name" name="projektant_name" placeholder="Imie" onblur="projektant_name_validation()">
+	<div id="projektant_name_error"></div>
+  </div>
+  <div class="form-group">
+   <label for="projektant_fname">Nazwisko</label>
+    <input type="text" class="form-control" id="projektant_fname" name="projektant_fname" placeholder="Nazwisko" onblur="projektant_fname_validation()">
+	<div id="projektant_fname_error"></div>
+  </div>
+  <div class="form-group">
+   <label for="product_price">Stopien</label>
+    <input type="text" class="form-control" id="Stopien" name="Stopien" placeholder="Stopien" onblur="projektant_stopien_validation()">
+		<div id="projektant_stopien_error"></div>
+  </div>
+  
+  <div class="form-group">
+   <label for="Tytul">Tytul</label>
+    <input type="text" class="form-control" id="Tytul" name="Tytul" placeholder="Tytul" onblur="projektant_tytul_validation()">
+		<div id="projektant_tytul_error"></div>
+  </div>
+  
+</div>
+</form>
+
+<div class="col-md-3"><h2></h2>
+</div>
+<div class="col-md-8"><h2>Rejestr pokazow</h2>
+<form name="formmmm">
+  <div class="form-group">
+    <label for="Prowadzacy">Prowadzacy</label>
+    <input type="text" class="form-control" id="Prowadzacy" name="Prowadzacy" placeholder="Prowadzacy" onblur="Prowadzacy_validation()">
+	<div id="Prowadzacy_error"></div>
+  </div>
+  <div class="form-group">
+   <label for="Jury">Jury</label>
+    <input type="text" class="form-control" id="Jury" name="Jury" placeholder="Jury" onblur="Jury_validation()">
+	<div id="Jury_error"></div>
+  </div>
+  <div class="form-group">
+   <label for="Data">Data</label>
+    <input type="text" class="form-control" id="Data" name="Data" placeholder="Data" onblur="data_validation">
+		<div id="Data_error"></div>
+  </div>
+  
+  <div class="form-group">
+   <label for="Projektancik">Projektant</label>
+    <input type="text" class="form-control" id="Projektancik" name="Projektancik" placeholder="Projektant" onblur="Projektancik_validation">
+		<div id="Projektancik_error"></div>
+  </div>
+  
+</div>
+</form>
+<!-- Use any element to open the sidenav -->
+
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+<div id="main">
+</div>
+</center>
+</div>
+
+
+
+
+</div>
+<div class="container">
+      
+        <div class="page-header">
+         <p>  </p>
+        </div>
+       
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted credit">Domy mody .... zal</p>
+      </div>
+    </div>
+</body>
+</head>
+</html>

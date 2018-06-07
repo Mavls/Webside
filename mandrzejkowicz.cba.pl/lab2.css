@@ -1,0 +1,109 @@
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    width: 100%;
+}
+div[style] {
+    display: none;
+}
+div[id^="bmone2n-"], .cbalink {
+    display: none;
+}
+header {
+    background-color: grey;
+    color: blue;
+    display: flex;
+    font-weight: bold;
+    height: 10%;
+    justify-content: center;
+    margin-bottom: 0.5%;
+    text-align: center;
+}
+aside:first-of-type {
+    float: left;
+    margin-right: 2%;
+    width: 16%;
+}
+aside > a {
+    background-color: yellow;
+    box-shadow: 2px 2px 1px grey;
+    color: black;
+    display: block;
+    line-height: 2.5em;
+    margin-bottom: 0.4em;
+    padding: 0 0.5em;
+    text-decoration: none;
+}
+main {
+    background-color: yellow;
+    box-sizing: border-box;
+    float: left;
+    height: 78.5%;
+    margin-bottom: 0.5%;
+    padding: 1em 2em;
+    width: 56.75%;
+}
+main > p {
+    margin: 0;
+}
+form {
+    display: inline-block;
+    float: left;
+    margin-bottom: 2%;
+    padding: 1em 2em;
+}
+form > div {
+    display: inline-block;
+    margin-right: 1em;
+}
+form > p {
+    text-align: center;
+}
+form > div > p {
+    margin: 0.4em 0;
+}
+form > div:nth-child(2) > p {
+    margin: 0.5em 0;
+}
+.blad {
+    background-color: darkred;
+    color: white;
+    margin: 0;
+    padding: 0.5em 1em;
+}
+#nazwisko_panienskie {
+    transform: translateY(-0.5em);
+}
+#plec {
+    line-height: 4em;
+}
+.bold {
+    font-weight: bold;
+}
+li {
+    color: blue;
+    list-style-type: circle;
+}
+aside:last-of-type {
+    background-color: yellow;
+    float: right;
+    height: 50%;
+    margin-left: 2%;
+    width: 23.25%;
+}
+table, td {
+    border: 1px solid #880;
+    border-collapse: collapse;
+}
+footer {
+    background-color: grey;
+    clear: both;
+    color: black;
+    display: flex;
+    font-weight: bold;
+    height: 10%;
+    justify-content: center;
+    text-align: center;
+}		
